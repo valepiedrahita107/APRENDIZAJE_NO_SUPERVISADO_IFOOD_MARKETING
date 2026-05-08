@@ -44,10 +44,12 @@ además de correlaciones importantes entre variables de consumo.
 </p>
 
 <h3>Distribución de Ingresos</h3>
-<img src="images/hist_income.png" width="700">
+<img src="i<img width="1481" height="1584" alt="image" src="https://github.com/user-attachments/assets/cac37942-acb9-4836-8378-b166128378a4" />
+" width="700">
 
 <h3>Matriz de Correlación</h3>
-<img src="images/heatmap_corr.png" width="700">
+<img src="<img width="1194" height="980" alt="image" src="https://github.com/user-attachments/assets/a43b3570-a10f-432e-9a95-98429cb77dee" />
+" width="700">
 
 <hr>
 
