@@ -1,222 +1,29 @@
-<h1 align="center">📊 Segmentación Inteligente de Clientes con Machine Learning</h1>
+<h1>Proyecto 2: Aprendizaje No Supervisado</h1>
 
-<p align="center">
-Proyecto de Aprendizaje No Supervisado enfocado en segmentación de clientes utilizando técnicas de clustering.
-</p>
+<h2>Segmentación de clientes con iFood Marketing Data</h2>
 
-<hr>
-
-<h2>🎯 Objetivo del Proyecto</h2>
+<h3>Juan Pablo Clavijo y Valeria Piedrahita</h3>
 
 <p>
-Identificar grupos de clientes con comportamientos similares mediante técnicas de aprendizaje no supervisado,
-permitiendo diseñar estrategias de marketing diferenciadas basadas en datos.
-</p>
-
-<hr>
-
-<h2>📂 Dataset</h2>
-
-<ul>
-  <li>Más de 1000 registros de clientes</li>
-  <li>Variables de ingreso, gasto, frecuencia y canales de compra</li>
-  <li>Datos orientados al comportamiento de consumo</li>
-</ul>
-
-<hr>
-
-<h2>🧹 Limpieza y Preprocesamiento</h2>
-
-<ul>
-  <li>Eliminación de columnas irrelevantes</li>
-  <li>Imputación de valores nulos en <b>Income</b> usando mediana</li>
-  <li>Detección y eliminación de outliers mediante Z-Score</li>
-  <li>Escalado utilizando <b>StandardScaler</b></li>
-</ul>
-
-<hr>
-
-<h2>📈 Análisis Exploratorio de Datos (EDA)</h2>
-
-<p>
-Durante el análisis exploratorio se identificó alta dispersión en variables de gasto,
-además de correlaciones importantes entre variables de consumo.
-</p>
-
-<h3>Distribución de Ingresos</h3>
-<img src="i<img width="1481" height="1584" alt="image" src="https://github.com/user-attachments/assets/cac37942-acb9-4836-8378-b166128378a4" />
-" width="700">
-
-<h3>Matriz de Correlación</h3>
-<img src="<img width="1194" height="980" alt="image" src="https://github.com/user-attachments/assets/a43b3570-a10f-432e-9a95-98429cb77dee" />
-" width="700">
-
-<hr>
-
-<h2>⚙️ Feature Engineering</h2>
-
-<p>
-Se crearon nuevas variables para representar mejor el comportamiento del cliente:
+Este proyecto desarrolla un flujo completo de aprendizaje no supervisado para identificar tribus de clientes y traducir los resultados técnicos en acciones de marketing.
+El análisis parte de la limpieza del dataset, continúa con el laboratorio de escalamiento y la comparación de algoritmos, y finaliza con el perfilamiento comercial de los clusters.
 </p>
 
 <ul>
-  <li><b>Total_Spend:</b> gasto total acumulado</li>
-  <li><b>Avg_Ticket:</b> gasto promedio por compra</li>
+  <li><strong>Dataset:</strong> iFood Marketing Data</li>
+  <li><strong>Fuente:</strong> Kaggle</li>
+  <li><strong>Técnicas utilizadas:</strong> EDA, escalamiento, K-Means, clustering jerárquico, DBSCAN, PCA y perfilamiento de clusters.</li>
+  <li><strong>Modelo final seleccionado:</strong> K-Means con K = 3.</li>
 </ul>
-
-<img src="images/total_spend.png" width="700">
-
-<hr>
-
-<h2>🚨 Tratamiento de Outliers</h2>
+<h2>Fase inicial: Selección del dataset</h2>
 
 <p>
-Los outliers fueron identificados utilizando Z-Score y eliminados cuando |Z| &gt; 3.
-Esto permitió mejorar la estabilidad del modelo y evitar distorsiones en la distancia euclidiana.
+Se seleccionó el dataset <strong>iFood Marketing Data</strong> porque cumple con los requisitos del proyecto:
+contiene más de 1,000 registros, incluye múltiples variables numéricas continuas y está orientado a comportamiento de clientes, compras, campañas y canales de venta.
 </p>
-
-<h3>Antes del Tratamiento</h3>
-<img src="images/boxplot_before.png" width="700">
-
-<h3>Después del Tratamiento</h3>
-<img src="images/boxplot_after.png" width="700">
-
-<hr>
-
-<h2>⚖️ Comparación de Escalamiento</h2>
 
 <p>
-Se compararon tres escenarios:
+Este dataset es especialmente adecuado para clustering, ya que permite segmentar clientes según ingreso, recencia, gasto por categoría, frecuencia de compra, uso de canales y respuesta a campañas.
+Estas variables facilitan la construcción de tribus comerciales accionables.
 </p>
 
-<ul>
-  <li>Datos sin escalar</li>
-  <li>MinMaxScaler</li>
-  <li>StandardScaler</li>
-</ul>
-
-<p>
-StandardScaler presentó el mejor desempeño según el silhouette score.
-</p>
-
-<img src="images/scaling_comparison.png" width="700">
-
-<hr>
-
-<h2>📉 Selección del Número de Clusters</h2>
-
-<p>
-El número óptimo de clusters se seleccionó utilizando el método del codo,
-identificando un punto de inflexión en K = 3.
-</p>
-
-<img src="images/elbow_method.png" width="700">
-
-<hr>
-
-<h2>🌐 DBSCAN</h2>
-
-<p>
-Se utilizó DBSCAN para detectar estructuras basadas en densidad y observaciones atípicas.
-</p>
-
-<img src="images/kdistance_plot.png" width="700">
-
-<hr>
-
-<h2>🌳 Clustering Jerárquico</h2>
-
-<p>
-El dendrograma mostró una estructura consistente con tres grupos principales.
-</p>
-
-<img src="images/dendrogram.png" width="700">
-
-<hr>
-
-<h2>📊 Visualización Final de Clusters</h2>
-
-<p>
-Se utilizó PCA para reducir dimensionalidad y visualizar los clusters en 2D.
-</p>
-
-<img src="images/pca_clusters.png" width="700">
-
-<hr>
-
-<h2>🧠 Segmentación de Clientes</h2>
-
-<table border="1" cellpadding="10">
-  <tr>
-    <th>Tribu</th>
-    <th>Características</th>
-    <th>Estrategia</th>
-  </tr>
-  <tr>
-    <td>VIP Omnicanal</td>
-    <td>Alto ingreso y alto gasto</td>
-    <td>Fidelización premium</td>
-  </tr>
-  <tr>
-    <td>Cazadores de Ofertas Activos</td>
-    <td>Alta actividad y respuesta a promociones</td>
-    <td>Promociones personalizadas</td>
-  </tr>
-  <tr>
-    <td>Exploradores de Bajo Consumo</td>
-    <td>Bajo gasto y alta presencia digital</td>
-    <td>Campañas de activación</td>
-  </tr>
-</table>
-
-<hr>
-
-<h2>💰 Estrategias de Negocio</h2>
-
-<table border="1" cellpadding="10">
-  <tr>
-    <th>Campaña</th>
-    <th>Objetivo</th>
-    <th>Acción Recomendada</th>
-  </tr>
-  <tr>
-    <td>Programa VIP Omnicanal</td>
-    <td>Fidelización</td>
-    <td>Beneficios exclusivos y experiencias premium</td>
-  </tr>
-  <tr>
-    <td>Ofertas Inteligentes</td>
-    <td>Incrementar recurrencia</td>
-    <td>Cupones y promociones personalizadas</td>
-  </tr>
-  <tr>
-    <td>Conversión Digital</td>
-    <td>Aumentar consumo</td>
-    <td>Campañas digitales de entrada</td>
-  </tr>
-</table>
-
-<hr>
-
-<h2>🎯 Conclusiones</h2>
-
-<p>
-El proyecto permitió identificar tres tribus de clientes mediante técnicas de clustering.
-K-Means con K = 3 fue seleccionado por ofrecer el mejor equilibrio entre desempeño e interpretabilidad.
-
-La segmentación permitió transformar datos en estrategias accionables orientadas a fidelización,
-promociones inteligentes y crecimiento del consumo.
-</p>
-
-<hr>
-
-<h2>🛠️ Tecnologías Utilizadas</h2>
-
-<ul>
-  <li>Python</li>
-  <li>Pandas</li>
-  <li>Scikit-Learn</li>
-  <li>Matplotlib</li>
-  <li>Seaborn</li>
-  <li>Jupyter Notebook</li>
-</ul>
