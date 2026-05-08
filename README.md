@@ -5,7 +5,7 @@ Proyecto de Aprendizaje No Supervisado enfocado en segmentación de clientes uti
 </p>
 
 <hr>
-VIDEO: https://youtu.be/2oc9aJQKKMU
+<h2> VIDEO: https://youtu.be/2oc9aJQKKMU </h2>
 <h2>🎯 Objetivo del Proyecto</h2>
 
 <p>
